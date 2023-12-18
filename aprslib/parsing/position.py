@@ -21,7 +21,7 @@ def parse_position(packet_type, body):
 
     if packet_type == ';':
         logger.debug("Attempting to parse object report format")
-        match = re.findall(r"^([ -~]{9})(\*|_)", body)
+        match = re.findall(r"^([b'\x20'-b'\x7e']{9})(\*|_)", body)
         if match:
             name, flag = match[0]
             parsed.update({
@@ -37,7 +37,7 @@ def parse_position(packet_type, body):
 
     if packet_type == ')':
         logger.debug("Attempting to parse item report format")
-        match = re.findall(r"^([b'0x20'b'0x22'-b'0x5e'b'0x60'-b'0x7e']{3,9})(\!|_)", body)
+        match = re.findall(r"^([b'\x20'b'\x22'-b'\x5e'b'\x60'-b'\x7e']{3,9})(\!|_)", body)
         if match:
             name, flag = match[0]
             parsed.update({
