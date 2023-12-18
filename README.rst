@@ -12,13 +12,9 @@ See `the documentation <http://aprs-python.readthedocs.io/en/latest/>`_.
 Installation
 ============
 
-To install the latest release from ``pypi``::
+To install the latest dev version from the `Github repo <https://github.com/nakhonthai/aprs-python/>`_::
 
-    pip install aprslib
-
-To install the latest dev version from the `Github repo <https://github.com/rossengeorgiev/aprs-python/>`_::
-
-    pip install git+https://github.com/rossengeorgiev/aprs-python
+    pip install git+https://github.com/nakhonthai/aprs-python
 
 
 Contribution
