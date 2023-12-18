@@ -50,7 +50,6 @@ unsupported_formats = {
         '%':'agrelo',
         '&':'reserved',
         '(':'unused',
-        ')':'item report',
         '*':'complete weather report',
         '+':'reserved',
         '-':'unused',
@@ -203,7 +202,7 @@ def _try_toparse_body(packet_type, body, parsed):
         body, result = parse_weather(body)
 
     # postion report (regular or compressed)
-    elif (packet_type in '!=/@;' or
+    elif (packet_type in '!=/@;)' or
           0 <= body.find('!') < 40):  # page 28 of spec (PDF)
 
         body, result = parse_position(packet_type, body)
